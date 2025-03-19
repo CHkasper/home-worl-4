@@ -51,9 +51,22 @@ class Text(models.Model):
         max_length=50,
         verbose_name='Текст'
     )
-    
+
     def __str__(self):
         return self.text
 
     class Meta:
         verbose_name_plural = 'Текс'
+
+class Image(models.Model):
+    image = models.ImageField(
+        upload_to='image',
+        verbose_name='Фото'
+    )
+    image2 = models.ImageField(
+        upload_to='image',
+        verbose_name='Фото 2'
+    )
+
+    class Meta:
+        verbose_name_plural = 'Фото'

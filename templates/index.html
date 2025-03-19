@@ -242,7 +242,7 @@
                                             
                                             <hr><hr><hr>
                                             
-                                        	<p class="has-opacity">Crafting exceptional websites tailored to your vision, we blend creativity with functionality to deliver stunning digital experiences.</p>
+                                        	<p class="has-opacity">{{ settings_id.description_video }}</p>
                                                                                     
                                             <div class="button-wrap right button-link has-animation">
                                                 <div class="icon-wrap parallax-wrap">
@@ -266,16 +266,17 @@
                                             
                                                 <div class="snap-slider-images">
                                                 	<div class="snap-slider-images-wrapper">
-                                                
+                                                        {% for image in image_all %}
+                                                        
                                                         <div class="snap-slide trigger-item change-header-color">
                                                             <div class="img-mask">
                                                                 <div class="section-image trigger-item-link">
-                                                                    <img src="{% static 'images/01hero.jpg' %}" class="item-image grid__item-img" alt="">
+                                                                    <img src="{{ image.image.url }}" class="item-image grid__item-img" alt="">
                                                                 </div>                                                
-                                                                <img src="{% static 'images/01hero.jpg' %}" class="grid__item-img grid__item-img--large" alt="">                              
+                                                                <img src="{{ image.image.url }}" class="grid__item-img grid__item-img--large" alt="">                              
                                                             </div>
                                                         </div>
-                                                        
+                                                        {% endfor %}
                                                         <div class="snap-slide trigger-item change-header-color">
                                                             <div class="img-mask">
                                                                 <div class="section-image trigger-item-link">
@@ -314,35 +315,14 @@
                                                 
                                                 <div class="snap-slider-thumbs">                                                
                                                 	<div class="snap-slider-thumbs-wrapper">
-                                                
-                                                        <div class="thumb-slide" data-centerLine="OPEN">
+                                                        {% for image in image_all %}
+                                                        <div class="thumb-slide" data-centerLine="OPEN" style="background-image: url({{ image.image2.url }});">
                                                         	<div class="thumb-slide-img">
-                                                            	<img src="images/01hero1.jpg" class="item-image grid__item-img" alt="">
+                                                            	<img src="{{ image.image.url }}" class="item-image grid__item-img" alt="">
                                                             </div>
                                                             <a class="slide-link" data-type="page-transition" href="project01.html"></a>
                                                         </div>
-                                                        
-                                                        <div class="thumb-slide" data-centerLine="OPEN">
-                                                        	<div class="thumb-slide-img">
-                                                            	<img src="images/02hero1.jpg" class="item-image grid__item-img" alt="">
-                                                            </div>
-                                                            <a class="slide-link" data-type="page-transition" href="project02.html"></a>
-                                                        </div>
-                                                        
-                                                        <div class="thumb-slide" data-centerLine="OPEN">
-                                                        	<div class="thumb-slide-img">
-                                                            	<img src="images/03hero1.jpg" class="item-image grid__item-img" alt="">
-                                                            </div>
-                                                            <a class="slide-link" data-type="page-transition" href="project03.html"></a>
-                                                        </div>
-                                                        
-                                                        <div class="thumb-slide" data-centerLine="OPEN">
-                                                        	<div class="thumb-slide-img">
-                                                            	<img src="images/04hero.jpg" class="item-image grid__item-img" alt="">
-                                                            </div>
-                                                            <a class="slide-link" data-type="page-transition" href="project04.html"></a>
-                                                        </div>
-                                                    
+                                                        {% endfor %}
                                                     </div>                                                    
                                                 </div>
                                                 
