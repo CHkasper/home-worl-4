@@ -222,85 +222,28 @@
                                         <div class="team-list-wrapper">
                                             
                                             <ul class="team-list-captions">
+                                                {% for team in team_all %}
                                                 <li data-centerLine="Hello">
-                                                    <div class="tml-title"><span>Hannah</span> <span>Smith</span></div>
-                                                    <div class="tml-cat">Co-Founder</div>
+                                                    <div class="tml-title"><span>{{ team.title }}</span></div>
+                                                    <div class="tml-cat">{{ team.description }}</div>
                                                 </li>
-                                                <li data-centerLine="Bonjour">
-                                                    <div class="tml-title"><span>Lucas</span> <span>Martin</span></div>
-                                                    <div class="tml-cat">Co-Founder</div>
-                                                </li>
-                                                <li data-centerLine="Hallo">                                                    
-                                                    <div class="tml-title"><span>Emma</span> <span>Müller</span></div>
-                                                    <div class="tml-cat">Web Designer</div>
-                                                </li>
-                                                <li data-centerLine="Salut">
-                                                    <div class="tml-title"><span>Mark</span> <span>Spencer</span></div>
-                                                    <div class="tml-cat">Web Developer</div>
-                                                </li>
-                                                <li data-centerLine="Holla">
-                                                    <div class="tml-title"><span>Charlotte</span> <span>Dunn</span></div>
-                                                    <div class="tml-cat">SEO Specialis</div>
-                                                </li>
-                                                <li data-centerLine="Apply">
-                                                    <div class="tml-title"><span>John</span> <span>Doe</span></div>
-                                                    <div class="tml-cat">Join our Team</div>
-                                                </li>
+                                                {% endfor %}
                                             </ul>
-                                            
-                                            
                                             <ul class="team-list-images">
+                                                {% for img in team_all %}
                                                 <li>
-                                                    <div class="img-mask">                                                    
+                                                    <div class="img-mask">
                                                         <div class="section-image">
-                                                            <img src="{% static 'images/team1.jpg' %}" class="item-image grid__item-img" alt="">
+                                                            <img src="{{ img.image.url }}" class="item-image grid__item-img" alt="">
                                                         </div>                            
                                                     </div>                                            
                                                 </li>
-                                                <li>
-                                                    <div class="img-mask">
-                                                        <div class="section-image">
-                                                            <img src="{% static 'images/team2.jpg' %}" class="item-image grid__item-img" alt="">
-                                                        </div>                         
-                                                    </div>                                         
-                                                </li>
-                                                <li>
-                                                    <div class="img-mask">
-                                                        <div class="section-image">
-                                                            <img src="{% static 'images/team3.jpg' %}" class="item-image grid__item-img" alt="">
-                                                        </div>                   
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                     <div class="img-mask">
-                                                        <div class="section-image">
-                                                            <img src="images/team4.jpg" class="item-image grid__item-img" alt="">                                                            
-                                                        </div>                          
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="img-mask">
-                                                        <div class="section-image">
-                                                            <img src="images/team5.jpg" class="item-image grid__item-img" alt="">
-                                                        </div>         
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="img-mask">
-                                                        <div class="section-image">
-                                                            <img src="images/team6.jpg" class="item-image grid__item-img" alt="">
-                                                        </div>               
-                                                    </div>
-                                                </li>
+                                                {% endfor %}
                                                 <li class="pixels-cover"></li>
                                             </ul>
-                                                
-                                        </div>                                        
-                                        
-                                    </div> 
+                                        </div>
+                                    </div>
                                     <!--/Row -->
-                                    
-                                    
                                     <!-- Row -->
                                     <div class="content-row has-clip-path row_padding_top row_padding_bottom dark-section change-header-color disable-header-gradient" data-bgcolor="#0c0c0c">
                                         

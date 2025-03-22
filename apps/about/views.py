@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from apps.about.models import About
+from apps.about.models import About, Team
 # Create your views here.
 class AboutView(TemplateView):
     template_name = 'about.html'
@@ -10,4 +10,5 @@ class AboutView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["about_all"] = About.objects.all()
         context["about_id"] = About.objects.latest("id")
+        context['team_all'] = Team.objects.all()
         return context
