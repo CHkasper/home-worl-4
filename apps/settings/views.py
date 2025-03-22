@@ -16,3 +16,4 @@ class IndexView(TemplateView):
         context['text_all'] = Text.objects.all()
         context['image_all'] = Image.objects.all()
         return context
+

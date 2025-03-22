@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +19,9 @@
     <meta name="description" content="Download the best Creative Portfolio HTML Template in 2025" />
     <meta name="author" content="ClaPat Studio">
     <meta charset="UTF-8" />    
-    <link rel="icon" type="image/ico" href="favicon.ico" />
-    <link href="style.css" rel="stylesheet" />
-    <link href="css/all.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/ico" href="{% static 'favicon.ico' %}" />
+    <link href="{% static 'style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -68,8 +70,8 @@
                     <!-- Logo -->
                     <div id="clapat-logo" class="hide-ball">
                         <a class="ajax-link" data-type="page-transition" href="index.html">
-                            <img class="black-logo" src="images/logo.png" alt="ClaPat Logo">
-                            <img class="white-logo" src="images/logo-white.png" alt="ClaPat Logo">
+                            <img class="black-logo" src="{% static 'images/logo.png' %}" alt="ClaPat Logo">
+                            <img class="white-logo" src="{% static 'images/logo-white.png' %}" alt="ClaPat Logo">
                         </a>
                     </div>
                     <!--/Logo -->
@@ -189,9 +191,9 @@
                                     <!-- Row -->
                                     <div class="content-row has-clip-path full dark-section change-header-color disable-header-gradient" data-bgcolor="transparent">
                                     
-                                        <div class="parallax-image-wrapper">
+                                        <div class="parallax-image-wrapper" style="background-image: url({{ about_id.image.url }});">
                                         
-                                            <div class="parallax-image" data-bg-image="images/parallax.jpg">
+                                            <div class="parallax-image" data-bg-image="{% static 'images/parallax.jpg' %}" style="background-image: url({{ about_id.image.url }});">
                                             </div>
                                             
                                             <div class="parallax-content-pin">
@@ -199,18 +201,12 @@
                                             </div>
                                             
                                             <ul class="parallax-content">
+                                                {% for about in about_all %}
                                                 <li class="parallax-list">
-                                                    <div><span>We are Bennet</span></div>
-                                                    <div><span>Digital Studio Agency</span></div>
+                                                    <div><span>{{ about.title }}</span></div>
+                                                    <div><span>{{ about.description }}</span></div>
                                                 </li>
-                                                <li class="parallax-list">
-                                                    <div><span>We bring ideas to life</span></div>
-                                                    <div><span>Your brand reimagined</span></div>
-                                                </li>
-                                                <li class="parallax-list">
-                                                    <div><span>Design with purpose</span></div>
-                                                    <div><span>Solutions for businesses</span></div>
-                                                </li>
+                                               {% endfor %}
                                             </ul>
 
                                             
@@ -257,21 +253,21 @@
                                                 <li>
                                                     <div class="img-mask">                                                    
                                                         <div class="section-image">
-                                                            <img src="images/team1.jpg" class="item-image grid__item-img" alt="">
+                                                            <img src="{% static 'images/team1.jpg' %}" class="item-image grid__item-img" alt="">
                                                         </div>                            
                                                     </div>                                            
                                                 </li>
                                                 <li>
                                                     <div class="img-mask">
                                                         <div class="section-image">
-                                                            <img src="images/team2.jpg" class="item-image grid__item-img" alt="">
+                                                            <img src="{% static 'images/team2.jpg' %}" class="item-image grid__item-img" alt="">
                                                         </div>                         
                                                     </div>                                         
                                                 </li>
                                                 <li>
                                                     <div class="img-mask">
                                                         <div class="section-image">
-                                                            <img src="images/team3.jpg" class="item-image grid__item-img" alt="">
+                                                            <img src="{% static 'images/team3.jpg' %}" class="item-image grid__item-img" alt="">
                                                         </div>                   
                                                     </div>
                                                 </li>
@@ -480,7 +476,7 @@
     
     
 		
-    <script src="js/jquery.min.js"></script>       
+    <script src="{% static 'js/jquery.min.js' %}"></script>       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js"></script>    
@@ -489,16 +485,12 @@
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.4.0/smooth-scrollbar.js'></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpK1sWi3J3EbUOkF_K4-UHzi285HyFX5M&sensor=false"></script>
     
-    <script src="js/clapat.js"></script>
-	<script src="js/plugins.js"></script>
+    <script src="{% static 'js/clapat.js' %}"></script>
+	<script src="{% static 'js/plugins.js' %}"></script>
     
-    <script src="js/common.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/scripts.js"></script>
-
-
-
-
+    <script src="{% static 'js/common.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 
 </html>
