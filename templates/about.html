@@ -149,8 +149,8 @@
                             <div id="hero-caption" class="content-full-width parallax-scroll-caption text-align-center hero-full-caption">
                                 <div class="inner">
                                 
-                                    <h1 class="hero-title caption-timeline" data-infoTextBefore="Creative" data-infoTextAfter="Agency">
-                                    	<div><span>studio</span></div>
+                                    <h1 class="hero-title caption-timeline" data-infoTextBefore="{{title_id.text}}" data-infoTextAfter="{{title_id.text2}}">
+                                    	<div><span>{{title_id.title}}</span></div>
                                     </h1>
                                     
                                     <div class="hero-subtitle caption-timeline onload-shuffle">
@@ -245,18 +245,19 @@
                                     </div>
                                     <!--/Row -->
                                     <!-- Row -->
-                                    <div class="content-row has-clip-path row_padding_top row_padding_bottom dark-section change-header-color disable-header-gradient" data-bgcolor="#0c0c0c">
+                                    <div class="content-row has-clip-path row_padding_top row_padding_bottom dark-section change-header-color disable-header-gradient" data-bgcolor="{{need_all.}}">
                                         
                                         <div class="pinned-lists-wrapper scale-mode text-align-center" data-duration="3x">
-                                            <p class="has-shuffle-onscroll">You need it? We do it</p>                               
-                                            <ul class="pinned-lists">
-                                                <li>branding</li>
-                                                <li>web design</li>
-                                                <li>motion</li>
-                                                <li>development</li>
-                                                <li>marketing</li>
-                                            </ul>
+                                            {% for need in need_all %}  
+                                                <p class="has-shuffle-onscroll">{{ need.title }}</p>                               
+                                                <ul class="pinned-lists">
+                                                    {% for item in need.text.splitlines %}  
+                                                        <li>{{ item }}</li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endfor %} 
                                         </div>
+                                        
                                         
                                     </div> 
                                     <!--/Row -->                                    
@@ -271,48 +272,16 @@
                                         <hr>
                                         
                                         <!-- Flex Lists --> 
-                                        <ul class="flex-lists-wrapper">                                                            
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">Awwwards</span>
-                                                <span class="flex-list-center">Developer Award, Site of the Day, Honorable Mention</span>
-                                                <span class="flex-list-right">x08 Awards</span>
-                                            </li>
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">CSS Design Awards</span>
-                                                <span class="flex-list-center">Website of the Day, Special Kudos</span>
-                                                <span class="flex-list-right">x06 Awards</span>
-                                            </li>
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">Behance</span>
-                                                <span class="flex-list-center">Featured UX/UI and XD Design</span>
-                                                <span class="flex-list-right">x04 Awards</span>
-                                            </li>
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">CSS Light</span>
-                                                <span class="flex-list-center">Featured Website, Featured Design</span>
-                                                <span class="flex-list-right">x12 Awards</span>
-                                            </li>
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">FWA Awards</span>
-                                                <span class="flex-list-center">FWA of the day, FWA of the month</span>
-                                                <span class="flex-list-right">x04 Awards</span>
-                                            </li>
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">One Page Love</span>
-                                                <span class="flex-list-center">Site of the Day</span>
-                                                <span class="flex-list-right">x10 Awards</span>
-                                            </li>
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">SiteInspire</span>
-                                                <span class="flex-list-center">Featured Website</span>
-                                                <span class="flex-list-right">x08 Awards</span>
-                                            </li>
-                                            <li class="flex-list link has-animation">
-                                                <span class="flex-list-left">CSS Winner</span>
-                                                <span class="flex-list-center">Site of the Day, Special Mention</span>
-                                                <span class="flex-list-right">x12 Awards</span>
-                                            </li>                        
+                                        <ul class="flex-lists-wrapper">
+                                            {% for award in award_all %}
+                                                <li class="flex-list link has-animation">
+                                                    <span class="flex-list-left">{{ award.title }}</span>
+                                                    <span class="flex-list-center">{{ award.description }}</span>
+                                                    <span class="flex-list-right">{{ award.count }}</span>
+                                                </li>
+                                            {% endfor %}
                                         </ul>
+                                        
                                         
                                         <hr class="destroy">
                                     
@@ -336,7 +305,7 @@
                                 <div class="page-nav-caption nav-full-caption content-full-width text-align-center">                                 
                                     <div class="inner">
                                         <a class="next-ajax-link-page" data-type="page-transition" data-centerline="GO TO" href="contact.html">
-                                            <div class="next-hero-title caption-timeline" data-infoTextBefore="Go Ahead" data-infoTextAfter="Next Page"><span>contact</span></div>
+                                            <div class="next-hero-title caption-timeline" data-infoTextBefore="{{contact_id.desc1}}" data-infoTextAfter="{{contact_id.desc2}}"><span>{{contact_id.title}}</span></div>
                                         </a>                                  
                                     </div>               
                                 </div>
